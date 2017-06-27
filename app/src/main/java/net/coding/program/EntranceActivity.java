@@ -106,6 +106,7 @@ public class EntranceActivity extends BaseActivity implements Handler.Callback {
 
         mWeakRefHandler = new WeakRefHander(this);
 
+        //设置启动后背景较图片,节假日单独设置
         settingBackground();
 
         entrance.setAnimationListener(new Animation.AnimationListener() {
@@ -125,6 +126,7 @@ public class EntranceActivity extends BaseActivity implements Handler.Callback {
             }
         });
 
+        //读取本机是否保存过登录信息
         if (MyApp.sUserObject.global_key.isEmpty() && AccountInfo.isLogin(this)) {
             getNetwork(HOST_CURRENT, HOST_CURRENT);
             mNeedUpdateUser = true;
@@ -199,9 +201,9 @@ public class EntranceActivity extends BaseActivity implements Handler.Callback {
     @Override
     public boolean handleMessage(Message msg) {
         if (msg.what == HANDLER_MESSAGE_ANIMATION) {
-            playAnimator1();
+            playAnimator1();//显示登录前动画
         } else if (msg.what == HANDLER_MESSAGE_NEXT_ACTIVITY) {
-            next();
+            next();//直接登录主界面
         }
         return true;
     }

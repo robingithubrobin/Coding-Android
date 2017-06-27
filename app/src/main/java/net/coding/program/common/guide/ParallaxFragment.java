@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,8 @@ public class ParallaxFragment extends Fragment implements ViewPager.OnPageChange
                 R.layout.parallax_view_3,
                 R.layout.parallax_view_4,
                 R.layout.parallax_view_5,
-                R.layout.parallax_view_6
+                R.layout.parallax_view_6,
+                R.layout.parallax_view_7
         );
 
         parallaxContainer.setOnPageChangeListener(this);
@@ -91,7 +93,7 @@ public class ParallaxFragment extends Fragment implements ViewPager.OnPageChange
 
     @Override
     public void onPageScrolled(int position, float offset, int offsetPixels) {
-//        Log.d("", String.format("off %d, %f, %d", position, offset, offsetPixels));
+        //Log.d("", String.format("off %d, %f, %d", position, offset, offsetPixels));
         if (offset > 0.5) {
             mIndicatorView.setSelect(position + 1);
         } else {

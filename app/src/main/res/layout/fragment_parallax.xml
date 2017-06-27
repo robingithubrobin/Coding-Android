@@ -54,6 +54,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="75dp"
-        myapp:pointCount="7" />
+        myapp:pointCount="8" />
 
 </RelativeLayout>
